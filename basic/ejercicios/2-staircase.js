@@ -17,10 +17,8 @@ function generator(a, b) {
         steps.fill(b);
         spaces.fill(defaultSpaceChar);
         console.log(spaces.join("") + steps.join(""));
-
     }
 }
-
 
 //Generate stair with default steps #
 defaultStairGenerator(6);
