@@ -25,3 +25,15 @@ const str = `<ul>
 // Tip: convertir a un array de objetos
 // Tip2: split
 
+let delimiterString = "</li>";
+let searchedString = 'Flexbox Video';
+let sumTimeInSeconds = 0;
+let timeFormatDelimiter = ":"
+
+let videos = str.split(delimiterString).filter(video => video.includes(searchedString)).map(video => video.substring(video.indexOf('=\"') + 2, video.indexOf('">')));
+videos.forEach(video => {
+  timeArray = video.split(timeFormatDelimiter);
+  sumTimeInSeconds += parseInt(timeArray[0] * 60) + parseInt(timeArray[1]);
+});
+
+console.log(sumTimeInSeconds);
