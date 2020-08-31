@@ -1,18 +1,22 @@
-
-function saveThePrisioner(n, m, s) {
+function saveThePrisioner(cantidadDePrisioneros, cantidadDeGolosinas, numeroDeSilla) {
     let victimChair;
     let isLastCandy = false;
+    //console.log("0 ACA - Prisioneros: " + cantidadDePrisioneros + " Golosinas: " + cantidadDeGolosinas +" NroSilla: "+ numeroDeSilla);
 
     while (!isLastCandy) {
-        if (n == m && s > 1) {
-            s = 1;
-        } else if (m == 1) {
-            victimChair = s;
+        if (cantidadDePrisioneros == numeroDeSilla && cantidadDeGolosinas > 1) {
+            numeroDeSilla = 1;
+            //console.log("1 ACA - Prisioneros: " + cantidadDePrisioneros + " Golosinas: " + cantidadDeGolosinas +" NroSilla: "+ numeroDeSilla);
+        } else if (cantidadDeGolosinas == 1) {
+            victimChair = numeroDeSilla;
             isLastCandy = true;
+            //console.log("2 ACA - Prisioneros: " + cantidadDePrisioneros + " Golosinas: " + cantidadDeGolosinas +" NroSilla: "+ numeroDeSilla);
         } else {
-            s++;
+            numeroDeSilla++;
+            //console.log("3 ACA - Prisioneros: " + cantidadDePrisioneros + " Golosinas: " + cantidadDeGolosinas +" NroSilla: "+ numeroDeSilla);
         }
-        m--;
+        cantidadDeGolosinas--;
+        //console.log("4 ACA - Prisioneros: " + cantidadDePrisioneros + " Golosinas: " + cantidadDeGolosinas +" NroSilla: "+ numeroDeSilla);
     }
     return victimChair;
 }
@@ -21,7 +25,7 @@ console.log(saveThePrisioner(5, 2, 1));
 console.log(saveThePrisioner(7, 19, 2));
 console.log(saveThePrisioner(3, 7, 3));
 
-//tdd
+// tdd
 console.log(saveThePrisioner(1, 1, 1) === 1);
 console.log(saveThePrisioner(5, 2, 1) === 2);
 console.log(saveThePrisioner(5, 2, 2) === 3);
