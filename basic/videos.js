@@ -25,7 +25,6 @@ const str = `<ul>
 // Tip: convertir a un array de objetos
 // Tip2: split
 
-<<<<<<< HEAD
 function getVideos(str){
   return str
     .replace('<ul>','')
@@ -57,17 +56,3 @@ function getTotalSegundos(videos, tipo){
 
 
 console.log(getTotalSegundos(getVideos(str), "Redux Video"));
-=======
-let delimiterString = "</li>";
-let searchedString = 'Flexbox Video';
-let sumTimeInSeconds = 0;
-let timeFormatDelimiter = ":"
-
-let videos = str.split(delimiterString).filter(video => video.includes(searchedString)).map(video => video.substring(video.indexOf('=\"') + 2, video.indexOf('">')));
-videos.forEach(video => {
-  timeArray = video.split(timeFormatDelimiter);
-  sumTimeInSeconds += parseInt(timeArray[0] * 60) + parseInt(timeArray[1]);
-});
-
-console.log(sumTimeInSeconds);
->>>>>>> e86f9011eee91820232a3ef9766d8c01bbc67205
