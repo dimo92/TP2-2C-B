@@ -54,4 +54,6 @@ function getTotalSegundos(videos, tipo){
   return totalsegundos;
 }
 
+
+
 console.log(getTotalSegundos(getVideos(str), "Redux Video"));
